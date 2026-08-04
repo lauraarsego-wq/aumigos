@@ -80,12 +80,26 @@ header {
     }
 }
 
+/* Configuração dos links das notícias */
+.link-noticia {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1rem;
+}
+
 .post {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito visual de hover ao passar o mouse */
+.link-noticia:hover .post {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
 .tag {
