@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal EcoPatas | Guia de Cuidados Sazonais</title>
+    <title>Portal EcoPatas | Cuidados e Interação</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos rápidos para o novo formulário se adaptar ao layout */
+        .form-interacao {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .form-grupo {
+            margin-bottom: 15px;
+        }
+        .form-grupo label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-grupo input[type="text"],
+        .form-grupo input[type="email"],
+        .form-grupo textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-grupo textarea {
+            resize: vertical;
+            height: 80px;
+        }
+        .btn-enviar {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-enviar:hover {
+            background-color: #27ae60;
+        }
+    </style>
 </head>
 <body>
 
@@ -56,37 +101,39 @@
                 <article class="post">
                     <span class="tag" style="background-color: #3498db;">CUIDADOS NO FRIO</span>
                     <h3>Mantenha seu Pet Aquecido no Inverno</h3>
-                    <p>Forre a casinha ou caminha com cobertores e evite que ele durma exposto ao vento. Cães de pelagem curta ou idosos podem usar roupinhas confortáveis para ajudar a manter a temperatura do corpo.</p>
+                    <p>Forre a casinha ou caminha com cobertores e evite que ele durma exposto ao vento. Cães de pelagem corta ou idosos podem usar roupinhas confortáveis para ajudar a manter a temperatura do corpo.</p>
                 </article>
             </section>
 
-            <!-- SEÇÃO DA AGENDA DE FEIRAS -->
+            <!-- SEÇÃO DE INTERAÇÃO (FORMULÁRIO DE ENVIO) -->
             <section class="agenda">
-                <h2>📅 Próximas Feiras de Adoção (2026)</h2>
+                <h2>📸 Espaço do Leitor & Aumigos</h2>
+                <p style="margin-bottom: 15px; color: #666;">Envie uma mensagem carinhosa e a foto do seu melhor amigo para aparecer no nosso portal!</p>
                 
-                <div class="evento-item">
-                    <div class="data-badge">AGO</div>
-                    <div class="detalhes">
-                        <h4>Campet - Feira de Adoção de Animais</h4>
-                        <p>📍 Centro de Convivência Cultural Carlos Gomes, Campinas - SP</p>
+                <!-- IMPORTANTE: Substitua 'SEU_EMAIL_AQUI' pelo seu e-mail real dentro do campo action -->
+                <form action="https://formspree.io" method="POST" enctype="multipart/form-data" class="form-interacao">
+                    <div class="form-grupo">
+                        <label for="nome">Seu Nome:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
                     </div>
-                </div>
 
-                <div class="evento-item">
-                    <div class="data-badge">SÁB</div>
-                    <div class="detalhes">
-                        <h4>Encontros Semanais Amigo Animal</h4>
-                        <p>📍 Lojas HiperZoo (Parolin e Jd. Botânico), Curitiba - PR</p>
+                    <div class="form-grupo">
+                        <label for="pet">Nome do seu Aumigo:</label>
+                        <input type="text" id="pet" name="nome_do_pet" required placeholder="Ex: Bob, Mel...">
                     </div>
-                </div>
 
-                <div class="evento-item">
-                    <div class="data-badge">OUT</div>
-                    <div class="detalhes">
-                        <h4>Mutirão e Feira do Dia Nacional da Adoção</h4>
-                        <p>📍 Ações unificadas em capitais (04 de Outubro)</p>
+                    <div class="form-grupo">
+                        <label for="mensagem">Mensagem ou História:</label>
+                        <textarea id="mensagem" name="mensagem" required placeholder="Conte um pouco sobre ele..."></textarea>
                     </div>
-                </div>
+
+                    <div class="form-grupo">
+                        <label for="foto">Foto do seu Aumigo:</label>
+                        <input type="file" id="foto" name="foto_do_pet" accept="image/*" required>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar para o Portal 🐾</button>
+                </form>
             </section>
 
         </div>
