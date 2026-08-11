@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal EcoPatas | Cuidados e Interação</title>
     <style>
-        /* Reset basico para garantir o funcionamento visual */
+        /* Reset básico para garantir o funcionamento visual */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7f6;
@@ -36,7 +36,7 @@
             }
         }
 
-        /* Estilos do Formulario */
+        /* Estilos do Formulário */
         .form-interacao {
             background: #fff;
             padding: 20px;
@@ -80,13 +80,28 @@
             background-color: #27ae60;
         }
 
-        /* Estilos da Secao do Quiz Interativo */
+        /* Estilos da Seção do Quiz Interativo */
         .quiz-container {
             background: #fff;
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 25px;
+        }
+        /* Topo do Quiz com Pontuação e Progresso */
+        .quiz-topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .quiz-placar {
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #e8f4fd;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
         }
         .progresso-container {
             background-color: #e9ecef;
@@ -126,15 +141,16 @@
             background-color: #e2e8f0;
             border-color: #cbd5e1;
         }
+        /* Cores Personalizadas Modernas */
         .opcao-btn.correta {
-            background-color: #d1e7dd !important;
-            border-color: #a3cfbb !important;
-            color: #0f5132 !important;
+            background-color: #2ecc71 !important;
+            border-color: #27ae60 !important;
+            color: #ffffff !important;
         }
         .opcao-btn.errada {
-            background-color: #f8d7da !important;
-            border-color: #f5c2c7 !important;
-            color: #842029 !important;
+            background-color: #e74c3c !important;
+            border-color: #c0392b !important;
+            color: #ffffff !important;
         }
         .quiz-resultado {
             margin-top: 15px;
@@ -166,9 +182,12 @@
     <main class="container">
         <div class="conteudo-principal">
             
-            <!-- COLUNA 1: QUIZ INTERATIVO (CORRIGIDO) -->
+            <!-- COLUNA 1: QUIZ INTERATIVO COM PONTUAÇÃO -->
             <section class="quiz-container">
-                <h2>🧩 Desafio EcoPatas: Curiosidades Animais</h2>
+                <div class="quiz-topo">
+                    <h2>🧩 Quiz EcoPatas</h2>
+                    <div class="quiz-placar">Acertos: <span id="pontos-valor">0</span>/3</div>
+                </div>
                 <p style="margin-bottom: 15px; color: #666;">Descubra fatos incríveis sobre o seu melhor amigo!</p>
                 
                 <div class="progresso-container">
@@ -183,7 +202,7 @@
                 </div>
             </section>
 
-            <!-- COLUNA 2: FORMULÁRIO DE ENVIO (FOTO REMOVIDA) -->
+            <!-- COLUNA 2: FORMULÁRIO DE ENVIO -->
             <section class="form-interacao">
                 <h2>📸 Espaço do Leitor & Aumigos</h2>
                 <p style="margin-bottom: 15px; color: #666;">Deixe um comentário carinhoso sobre o seu melhor amigo!</p>
@@ -237,12 +256,14 @@
 
         let perguntaAtual = 0;
         let respondido = false;
+        let pontuacao = 0;
 
         const textoPergunta = document.getElementById("pergunta-texto");
         const containerOpcoes = document.getElementById("opcoes-container");
         const divResultado = document.getElementById("quiz-resultado");
         const btnProximo = document.getElementById("btn-proximo");
         const barraProgresso = document.getElementById("quiz-progresso");
+        const elementoPontos = document.getElementById("pontos-valor");
 
         function atualizarProgresso() {
             const porcentagem = (perguntaAtual / perguntas.length) * 100;
@@ -259,19 +280,3 @@
             
             if (perguntaAtual >= perguntas.length) {
                 textoPergunta.innerHTML = "🎉 Parabéns! Você concluiu o Quiz!";
-                containerOpcoes.innerHTML = "<p style='text-align:center; font-weight:500; color:#27ae60;'>Você conhece bem as necessidades dos animais! Continue cuidando muito bem deles. 🐾</p>";
-                return;
-            }
-            
-            let dadosQuiz = perguntas[perguntaAtual];
-            textoPergunta.innerText = dadosQuiz.pergunta;
-            
-            dadosQuiz.opcoes.forEach((opcao, index) => {
-                const botao = document.createElement("button");
-                botao.innerText = opcao; // Linha corrigida aqui
-                botao.classList.add("opcao-btn");
-                botao.onclick = function() { selecionarOpcao(index, botao); };
-                containerOpcoes.appendChild(botao);
-            });
-        }
-
