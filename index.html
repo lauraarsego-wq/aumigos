@@ -45,9 +45,71 @@
             width: 100%;
             font-size: 16px;
             font-weight: bold;
+            transition: background-color 0.2s ease;
         }
         .btn-enviar:hover {
             background-color: #27ae60;
+        }
+
+        /* Estilos da Nova Seção do Quiz Interativo */
+        .quiz-container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        #quiz-box h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .quiz-opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .opcao-btn {
+            background-color: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        .opcao-btn:hover {
+            background-color: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+        .opcao-btn.correta {
+            background-color: #d1e7dd !important;
+            border-color: #a3cfbb !important;
+            color: #0f5132;
+        }
+        .opcao-btn.errada {
+            background-color: #f8d7da !important;
+            border-color: #f5c2c7 !important;
+            color: #842029;
+        }
+        .quiz-resultado {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .quiz-resultado.sucesso {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+        .quiz-resultado.errada {
+            background-color: #f8d7da;
+            color: #842029;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -69,7 +131,7 @@
                 </div>
                 <div class="mini-card-dados">
                     <h3>4,8 Milhões</h3>
-                    <p>Animais vivendo in situação de vulnerabilidade.</p>
+                    <p>Animais vivendo em situação de vulnerabilidade.</p>
                 </div>
                 <div class="mini-card-dados">
                     <h3>135%</h3>
@@ -103,6 +165,21 @@
                     <h3>Mantenha seu Pet Aquecido no Inverno</h3>
                     <p>Forre a casinha ou caminha com cobertores e evite que ele durma exposto ao vento. Cães de pelagem curta ou idosos podem usar roupinhas confortáveis para ajudar a manter a temperatura do corpo.</p>
                 </article>
+
+                <!-- SEÇÃO INTERATIVA INSTALADA: QUIZ DOS ANIMAIS -->
+                <section class="quiz-container">
+                    <h2>🧩 Desafio EcoPatas: Você cuida bem do seu pet?</h2>
+                    <p style="margin-bottom: 15px; color: #666;">Responda rápido para testar seus conhecimentos sobre bem-estar animal!</p>
+                    
+                    <div id="quiz-box">
+                        <h3 id="pergunta-texto">Carregando pergunta...</h3>
+                        <div class="quiz-opcoes" id="opcoes-container">
+                            <!-- Inserção dinâmica via JS -->
+                        </div>
+                        <div id="quiz-resultado" class="quiz-resultado hidden"></div>
+                        <button id="btn-proximo" class="btn-enviar" style="margin-top: 15px; display: none;">Próxima Pergunta 🐾</button>
+                    </div>
+                </section>
             </section>
 
             <!-- SEÇÃO DE INTERAÇÃO (FORMULÁRIO DE ENVIO) -->
@@ -110,7 +187,7 @@
                 <h2>📸 Espaço do Leitor & Aumigos</h2>
                 <p style="margin-bottom: 15px; color: #666;">Envie uma mensagem carinhosa e a foto do seu melhor amigo para aparecer no nosso portal!</p>
                 
-                <!-- CORREÇÃO: URL ajustada para receber o ID do formulário do Formspree -->
+                <!-- ATENÇÃO: Lembre-se de substituir o trecho SEU_ID_AQUI pelo código alfanumérico do seu formulário Formspree -->
                 <form action="https://formspree.io" method="POST" enctype="multipart/form-data" class="form-interacao">
                     <div class="form-grupo">
                         <label for="nome">Seu Nome:</label>
@@ -143,6 +220,25 @@
         <p>&copy; 2026 EcoPatas Notícias. Feito com amor pelos animais.</p>
     </footer>
 
+    <!-- Scripts de funcionamento da página -->
     <script src="script.js"></script>
-</body>
-</html>
+
+    <!-- Sistema JavaScript lógico do Quiz Interativo -->
+    <script>
+        const perguntas = [
+            {
+                pergunta: "Qual o horário ideal e mais seguro para passear com o cachorro em dias quentes?",
+                opcoes: ["Entre 11h e 15h", "Antes das 10h ou após as 16h", "Exatamente ao meio-dia", "Qualquer horário com sol"],
+                correta: 1,
+                explicacao: "Evitar o sol forte protege os coxins (as patinhas) contra queimaduras graves no asfalto."
+            },
+            {
+                pergunta: "Qual destes alimentos é altamente tóxico e perigoso para cães e gatos?",
+                opcoes: ["Melancia sem semente", "Abóbora cozida pura", "Chocolate", "Arroz branco sem temperos"],
+                correta: 2,
+                explicacao: "O chocolate contém teobromina, um composto químico estimulante perigoso que os animais não conseguem metabolizar."
+            },
+            {
+                pergunta: "Qual a medida mais eficaz e recomendada para o controle populacional e saúde de cães e gatos?",
+                opcoes: ["Utilizar vacinas anticoncepcionais", "Realizar a castração cirúrgica segura", "Permitir que o pet dê voltas sozinho na rua", "Manter o pet isolado de contatos"],
+                correta: 1,
