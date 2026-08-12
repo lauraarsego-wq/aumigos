@@ -9,12 +9,14 @@
 </head>
 <body>
 
-    <!-- Cabeçalho (Menu com links funcionando) -->
+    <!-- Cabeçalho (Menu Atualizado) -->
     <header>
         <div class="logo">🐾 Aumigoso</div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="#servicos-secao">Serviços</a>
+            <a href="#precos-secao">Preços</a>
+            <a href="#agendamento-secao">Agendar</a>
             <a href="#depoimentos">Depoimentos</a>
         </nav>
     </header>
@@ -23,7 +25,7 @@
     <section class="hero" id="inicio">
         <h1>Bem-vindo ao Aumigoso!</h1>
         <p>Tudo o que seu melhor amigo precisa em um só lugar.</p>
-        <a href="#servicos-secao" class="btn-principal">Conhecer Serviços</a>
+        <a href="#agendamento-secao" class="btn-principal">Agendar uma Visita</a>
     </section>
 
     <!-- Seção de Serviços Interativos -->
@@ -46,6 +48,70 @@
                 <h3>Hotelzinho Pet</h3>
                 <p>Espaço amplo, recreação monitorada e muito carinho enquanto você viaja tranquilo.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Tabela de Preços Interativa -->
+    <section class="precos-container" id="precos-secao">
+        <h2>Planos e Preços Justos</h2>
+        <p class="subtitulo">Escolha o melhor cuidado para o seu aumigoso</p>
+        <div class="tabela-grid">
+            <div class="plano-card">
+                <h3>Plano Essencial</h3>
+                <div class="preco">R$ 80<span>/mês</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> 2 Banhos por mês</li>
+                    <li><i class="fas fa-check"></i> Corte de unhas</li>
+                    <li><i class="fas fa-check"></i> Limpeza de ouvidos</li>
+                </ul>
+                <a href="#agendamento-secao" class="btn-plano">Escolher Plano</a>
+            </div>
+            <div class="plano-card destaque">
+                <div class="selo-destaque">Mais Popular</div>
+                <h3>Plano VIP</h3>
+                <div class="preco">R$ 150<span>/mês</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> 4 Banhos por mês</li>
+                    <li><i class="fas fa-check"></i> 1 Tosa Higiênica</li>
+                    <li><i class="fas fa-check"></i> 1 Avaliação Veterinária</li>
+                    <li><i class="fas fa-check"></i> Leva e Traz incluso</li>
+                </ul>
+                <a href="#agendamento-secao" class="btn-plano-destaque">Escolher Plano</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Formulário de Agendamento Interativo -->
+    <section class="agendamento-container" id="agendamento-secao">
+        <div class="form-box">
+            <h2>Marque um Horário</h2>
+            <p>Preencha os dados e garanta a vaga do seu pet instantaneamente!</p>
+            <form onsubmit="alert('Agendamento recebido com sucesso! O Bob enviou os dados para nossa equipe.'); return false;">
+                <div class="form-grupo">
+                    <label for="nome-tutor">Seu Nome</label>
+                    <input type="text" id="nome-tutor" placeholder="Ex: João Silva" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="nome-pet">Nome do Pet</label>
+                    <input type="text" id="nome-pet" placeholder="Ex: Rex" required>
+                </div>
+                <div class="form-grupo-linha">
+                    <div class="form-grupo">
+                        <label for="tipo-servico">Serviço Desejado</label>
+                        <select id="tipo-servico" required>
+                            <option value="">Selecione...</option>
+                            <option value="banho">Banho & Tosa</option>
+                            <option value="vet">Consulta Veterinária</option>
+                            <option value="hotel">Hotelzinho Pet</option>
+                        </select>
+                    </div>
+                    <div class="form-grupo">
+                        <label for="data-hora">Data e Hora</label>
+                        <input type="datetime-local" id="data-hora" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-enviar">Confirmar Agendamento 🐾</button>
+            </form>
         </div>
     </section>
 
