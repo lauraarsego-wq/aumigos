@@ -9,57 +9,79 @@
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho (Menu com links funcionando) -->
     <header>
         <div class="logo">🐾 Aumigoso</div>
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Serviços</a>
-            <a href="#">Contato</a>
+            <a href="#inicio">Início</a>
+            <a href="#servicos-secao">Serviços</a>
+            <a href="#depoimentos">Depoimentos</a>
         </nav>
     </header>
 
     <!-- Banner Principal -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <h1>Bem-vindo ao Aumigoso!</h1>
         <p>Tudo o que seu melhor amigo precisa em um só lugar.</p>
-        <button class="btn-principal">Saber Mais</button>
+        <a href="#servicos-secao" class="btn-principal">Conhecer Serviços</a>
     </section>
 
-    <!-- Conteúdo Espaço -->
-    <main class="conteudo">
-        <h2>Como podemos te ajudar hoje?</h2>
-        <p>Explore nosso site ou converse com o nosso mascote ali no canto!</p>
-    </main>
+    <!-- Seção de Serviços Interativos -->
+    <section class="servicos-container" id="servicos-secao">
+        <h2>Nossos Serviços Premium</h2>
+        <p class="subtitulo">Passe o mouse por cima para ver os detalhes</p>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-bath icone-card"></i>
+                <h3>Banho & Tosa</h3>
+                <p>Produtos hipoalergênicos e profissionais qualificados para o bem-estar do seu pet.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-stethoscope icone-card"></i>
+                <h3>Veterinária</h3>
+                <p>Consultas preventivas, exames laboratoriais e vacinação em dia para proteger quem você ama.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-hotel icone-card"></i>
+                <h3>Hotelzinho Pet</h3>
+                <p>Espaço amplo, recreação monitorada e muito carinho enquanto você viaja tranquilo.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- WIDGET DO MASCOTE VIRA-LATA CARAMELO CORRIGIDO -->
+    <!-- Seção Interativa de Depoimentos -->
+    <section class="depoimentos-container" id="depoimentos">
+        <h2>Quem usa, aprova!</h2>
+        <div class="depoimento-box">
+            <p>"O Bob me ajudou a tirar dúvidas no chat e agendei o hotelzinho pro meu vira-lata. Atendimento nota mil!"</p>
+            <h4>- Mariana & Frederico (🐾)</h4>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Aumigoso. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WIDGET DO MASCOTE VIRA-LATA CARAMELO -->
     <div class="chat-container">
-        <!-- Balão de Fala do Mascote -->
         <div class="balao-mascote" id="balaoMascote">Au-au! Precisa de uma patazinha? 🐾</div>
         
-        <!-- Botão do Mascote (Vira-lata Caramelo em Vetor) -->
         <div class="mascote-btn" id="mascoteBtn" onclick="toggleChat()">
             <svg viewBox="0 0 512 512" xmlns="http://w3.org">
-                <!-- Orelhas Caramelo Escuro -->
                 <ellipse cx="140" cy="180" rx="35" ry="60" fill="#C67A32" transform="rotate(-15 140 180)" />
                 <ellipse cx="372" cy="180" rx="35" ry="60" fill="#C67A32" transform="rotate(15 372 180)" />
-                <!-- Cabeça Vira-lata Caramelo -->
                 <ellipse cx="256" cy="230" rx="110" ry="100" fill="#E59848" />
-                <!-- Focinho Claro -->
                 <ellipse cx="256" cy="270" rx="55" ry="45" fill="#F5CBA7" />
-                <!-- Olhos -->
                 <circle cx="210" cy="200" r="14" fill="#2C3E50" />
                 <circle cx="302" cy="200" r="14" fill="#2C3E50" />
                 <circle cx="214" cy="196" r="4" fill="#FFFFFF" />
                 <circle cx="306" cy="196" r="4" fill="#FFFFFF" />
-                <!-- Nariz Preto -->
                 <polygon points="236,250 276,250 256,270" fill="#2C3E50" />
-                <!-- Boca/Sorriso -->
                 <path d="M 240 285 Q 256 295 272 285" stroke="#2C3E50" stroke-width="4" fill="none" stroke-linecap="round" />
             </svg>
         </div>
 
-        <!-- Janela do Chatbot -->
         <div class="chat-janela" id="chatJanela">
             <div class="chat-header">
                 <h3>🐾 Chat do Aumigoso</h3>
