@@ -1,54 +1,69 @@
-# 🐾 EcoPatas Notícias – Portal da Causa Animal no Brasil
+# 🐾 Aumigoso - Site Pet Interativo
 
-![GitHub repo size](https://shields.io)
-![GitHub language count](https://shields.io)
-![GitHub license](https://shields.io)
+O **Aumigoso** é um site institucional para o mercado pet, projetado com uma identidade visual moderna nas cores azul marinho e vermelho. O grande diferencial do projeto é o **Bob**, um cão mascote interativo posicionado no canto da tela que funciona como um chatbot para sanar dúvidas rápidas dos usuários e direcioná-los para o atendimento humano.
 
-O **EcoPatas Notícias** é um portal dinâmico projetado para centralizar informações cruciais sobre a causa animal no Brasil. O projeto reúne dados estatísticos reais do cenário das ONGs brasileiras, notícias atualizadas de resgates, inovações no mercado de nutrição pet e uma agenda unificada de feiras de adoção.
+---
 
-## 🚀 Funcionalidades Atuais
+## ✨ Recursos
 
-- **📊 Dashboard de Dados (Cenário Real):** Exibição de métricas baseadas no primeiro relatório nacional da Federação Brasileira da Causa Animal (FEBRACA).
-- **🚨 Feed de Notícias:** Seção dedicada a atualizações de resgates de grande impacto e novidades sobre o mercado de rações preventivas.
-- **📅 Agenda de Feiras:** Painel visual com as próximas feiras de adoção agendadas pelo país.
-- **📱 Design Responsivo:** Interface otimizada para visualização em computadores, tablets e smartphones.
+*   **Identidade Visual Marcante**: Cores contrastantes (Azul Marinho e Vermelho) para um visual profissional e amigável.
+*   **Mascote Assistente**: O cãozinho Bob fica flutuando na página chamando a atenção do tutor de forma sutil.
+*   **Chatbot Integrado**: Respostas rápidas e automáticas ao clique de botões (Serviços, Horários e Suporte).
+*   **Transição de Canal**: Encaminhamento inteligente para o atendimento via WhatsApp caso o robô não saiba a resposta.
+*   **Totalmente Responsivo**: Adapta-se perfeitamente a computadores, tablets e celulares.
+
+---
+
+## 🎨 Cores Utilizadas
+
+*   🔵 **Azul Marinho (`#0A192F`)**: Cor principal, transmitindo segurança e confiança.
+*   🔴 **Vermelho (`#E63946`)**: Cor de destaque, utilizada em botões de ação e notificações importantes.
+*   ⚪ **Gelo/Cinza Claro (`#F4F6F9` / `#FFFFFF`)**: Fundo das seções para garantir leitura leve e limpa.
+
+---
+
+## 📂 Estrutura de Arquivos
+
+```text
+├── index.html       # Estrutura principal e esqueleto do site/chat
+├── style.css        # Estilização completa, cores e animações
+└── script.js        # Lógica de abertura do chat e automação do robô
+```
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+Não é necessário instalar nenhuma dependência ou banco de dados. Para rodar o site no seu computador, siga os passos abaixo:
+
+1.  **Clone o repositório** para a sua máquina:
+    ```bash
+    git clone https://github.com
+    ```
+2.  Navegue até a pasta do projeto.
+3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência (Chrome, Edge, Firefox, etc.).
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-O projeto foi desenvolvido utilizando tecnologias web nativas para garantir máxima velocidade de carregamento e facilidade de manutenção:
-
-* **HTML5:** Estruturação semântica de dados e conteúdos.
-* **CSS3:** Estilização moderna através de variáveis globais (`:root`), Grid Layout e Flexbox.
-* **JavaScript (ES6):** Manipulação básica do DOM e estrutura preparada para integração com APIs.
-
-## 📁 Estrutura do Repositório
-
-```text
-├── index.html      # Estrutura principal e conteúdos do portal
-├── style.css       # Estilização visual e responsividade
-├── script.js       # Comportamentos dinâmicos e lógica do sistema
-└── README.md       # Documentação do projeto (este arquivo)
-```
-
-## 💻 Como Executar o Projeto Localmente
-
-Se você deseja rodar e testar o projeto na sua máquina local, siga estes passos:
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com
-   ```
-2. **Navegue até a pasta do projeto:**
-   ```bash
-   cd noticias-ongs-animais
-   ```
-3. **Abra o arquivo principal:**
-   Basta dar um duplo clique no arquivo `index.html` ou usar a extensão *Live Server* no VS Code.
-
-## 🌐 Publicação (GitHub Pages)
-
-Este projeto está configurado para ser hospedado gratuitamente no **GitHub Pages**. Para visualizar a versão online ativa, acesse:
-👉 [https://github.io](https://github.io)
+*   **HTML5** - Estruturação semântica da página.
+*   **CSS3** - Estilização customizada e animações em `@keyframes`.
+*   **JavaScript (Vanilla)** - Manipulação do DOM para simulação de respostas do chatbot.
+*   **FontAwesome** - Biblioteca de ícones modernos para a interface.
 
 ---
-💡 *Nota: Lembre-se de substituir `seu-usuario` nas URLs acima pelo seu nome de usuário real do GitHub antes de salvar o arquivo.*
+
+## 🐶 Customização do Chatbot
+
+Caso queira alterar as respostas automáticas do cão mascote, basta abrir o arquivo `script.js` e editar o conteúdo das variáveis dentro da função `responder(opcao)`:
+
+```javascript
+if (opcao === 'servicos') {
+    respostaBot = "SUA NOVA RESPOSTA AQUI";
+}
+```
+
+---
+
+Desenvolvido com 🐾 por [Seu Nome](https://github.com).
