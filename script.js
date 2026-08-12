@@ -2,16 +2,13 @@
 function toggleChat() {
     const chatJanela = document.getElementById('chatJanela');
     const balaoMascote = document.getElementById('balaoMascote');
-    const mascoteBtn = document.getElementById('mascoteBtn');
 
     if (chatJanela.style.display === 'none' || chatJanela.style.display === '') {
         chatJanela.style.display = 'flex';
-        balaoMascote.style.display = 'none'; // Esconde o balão quando abre o chat
-        mascoteBtn.style.display = 'none';    // Oculta o botão redondo se quiser focar no chat
+        balaoMascote.style.display = 'none'; // Esconde o balão ao abrir
     } else {
         chatJanela.style.display = 'none';
-        balaoMascote.style.display = 'block';
-        mascoteBtn.style.display = 'block';
+        balaoMascote.style.display = 'block'; // Mostra o balão ao fechar
     }
 }
 
@@ -19,7 +16,6 @@ function toggleChat() {
 function responder(opcao) {
     const chatMensagens = document.getElementById('chatMensagens');
     
-    // 1. Adiciona a mensagem do usuário na tela
     let textoUsuario = "";
     let respostaBot = "";
 
@@ -34,21 +30,19 @@ function responder(opcao) {
         respostaBot = "Isso é muito complexo para o meu faro! Vou chamar um humano. Me chama no WhatsApp: (00) 99999-9999 🐕";
     }
 
-    // Criar elemento de texto do usuário
+    // Adiciona mensagem do usuário
     const divUsuario = document.createElement('div');
     divUsuario.className = 'msg-usuario';
     divUsuario.innerText = textoUsuario;
     chatMensagens.appendChild(divUsuario);
-
-    // Rolar para o final do chat
     chatMensagens.scrollTop = chatMensagens.scrollHeight;
 
-    // 2. Simular digitação do Bot após 800ms
+    // Simula a resposta do mascote após um breve delay
     setTimeout(() => {
         const divBot = document.createElement('div');
         divBot.className = 'msg-bot';
         divBot.innerText = respostaBot;
         chatMensagens.appendChild(divBot);
         chatMensagens.scrollTop = chatMensagens.scrollHeight;
-    }, 800);
+    }, 600);
 }
