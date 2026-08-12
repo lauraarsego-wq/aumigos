@@ -5,10 +5,10 @@ function toggleChat() {
 
     if (chatJanela.style.display === 'none' || chatJanela.style.display === '') {
         chatJanela.style.display = 'flex';
-        balaoMascote.style.display = 'none'; // Esconde o balão ao abrir
+        balaoMascote.style.display = 'none'; // Esconde o balão ao abrir o chat
     } else {
         chatJanela.style.display = 'none';
-        balaoMascote.style.display = 'block'; // Mostra o balão ao fechar
+        balaoMascote.style.display = 'block'; // Mostra o balão ao fechar o chat
     }
 }
 
@@ -30,7 +30,7 @@ function responder(opcao) {
         respostaBot = "Isso é muito complexo para o meu faro! Vou chamar um humano. Me chama no WhatsApp: (00) 99999-9999 🐕";
     }
 
-    // Adiciona mensagem do usuário
+    // Adiciona a mensagem clicada pelo usuário no chat
     const divUsuario = document.createElement('div');
     divUsuario.className = 'msg-usuario';
     divUsuario.innerText = textoUsuario;
