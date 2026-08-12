@@ -9,13 +9,14 @@
 body {
     background-color: #f4f6f9;
     color: #333;
+    overflow-x: hidden;
 }
 
-/* Cores do Projeto: Azul Marinho (#0A192F) e Vermelho (#E63946) */
+/* Cabeçalho */
 header {
     background-color: #0A192F;
     color: white;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,14 +26,19 @@ header nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    transition: 0.2s;
 }
 
+header nav a:hover {
+    color: #E63946;
+}
+
+/* Banner Principal */
 .hero {
-    background-linear-gradient: (135deg, #0A192F, #172A45);
-    background-color: #0A192F;
+    background: linear-gradient(135deg, #0A192F, #172A45);
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
 }
 
 .hero h1 {
@@ -57,11 +63,11 @@ header nav a {
 }
 
 .conteudo {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-/* --- ESTILO DO MASCOTE E CHATBOT --- */
+/* --- ESTILO DO MASCOTE E CHATBOT CORRIGIDO --- */
 .chat-container {
     position: fixed;
     bottom: 30px;
@@ -72,33 +78,40 @@ header nav a {
     align-items: flex-end;
 }
 
-/* Balão de Fala */
+/* Balão de Fala Ajustado */
 .balao-mascote {
     background-color: white;
     color: #333;
-    padding: 10px 15px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    padding: 12px 18px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
     border: 2px solid #0A192F;
+    text-align: center;
+    white-space: nowrap;
     animation: flutuar 2s infinite ease-in-out;
 }
 
-/* Botão Redondo do Cão */
+/* Botão Redondo do Cão Corrigido */
 .mascote-btn {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     border: 4px solid #E63946;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
     transition: transform 0.2s;
+    background-color: #0A192F; /* Fundo caso a imagem falhe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mascote-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .mascote-btn img {
@@ -110,15 +123,14 @@ header nav a {
 /* Janela do Chat */
 .chat-janela {
     display: none;
-    width: 320px;
-    height: 400px;
+    width: 340px;
+    height: 450px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.3);
     border: 2px solid #0A192F;
     overflow: hidden;
     flex-direction: column;
-    margin-top: -80px;
 }
 
 .chat-header {
@@ -133,6 +145,11 @@ header nav a {
 .fechar-chat {
     cursor: pointer;
     font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+.fechar-chat:hover {
+    color: #E63946;
 }
 
 .chat-mensagens {
@@ -142,19 +159,21 @@ header nav a {
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .msg-bot, .msg-usuario {
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 85%;
     font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .msg-bot {
     background-color: #E2E8F0;
     align-self: flex-start;
+    color: #333;
 }
 
 .msg-usuario {
@@ -164,22 +183,23 @@ header nav a {
 }
 
 .chat-opcoes {
-    padding: 10px;
+    padding: 12px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    border-top: 1px solid #ddd;
+    gap: 8px;
+    border-top: 1px solid #eee;
 }
 
 .chat-opcoes button {
     background-color: white;
     border: 1px solid #0A192F;
     color: #0A192F;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 8px;
     cursor: pointer;
     text-align: left;
+    font-weight: 500;
     transition: 0.2s;
 }
 
@@ -191,5 +211,5 @@ header nav a {
 /* Animação Flutuar */
 @keyframes flutuar {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-6px); }
 }
