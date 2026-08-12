@@ -1,4 +1,8 @@
 /* Configurações Gerais */
+html {
+    scroll-behavior: smooth; /* Faz a rolagem do menu ficar suave */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,12 +24,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 header nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 25px;
+    font-weight: 500;
     transition: 0.2s;
 }
 
@@ -38,33 +51,150 @@ header nav a:hover {
     background: linear-gradient(135deg, #0A192F, #172A45);
     color: white;
     text-align: center;
-    padding: 120px 20px;
+    padding: 140px 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
 }
 
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
 .btn-principal {
+    display: inline-block;
     background-color: #E63946;
     color: white;
+    text-decoration: none;
     border: none;
-    padding: 12px 30px;
+    padding: 14px 35px;
     font-size: 1rem;
     border-radius: 25px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
 }
 
 .btn-principal:hover {
     background-color: #C82333;
+    transform: translateY(-2px);
 }
 
-.conteudo {
-    padding: 80px 20px;
+/* Seção de Serviços Estilizada */
+.servicos-container {
+    padding: 80px 40px;
     text-align: center;
+    background-color: #ffffff;
+}
+
+.servicos-container h2 {
+    font-size: 2.2rem;
+    color: #0A192F;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 320px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.icone-card {
+    font-size: 2.5rem;
+    color: #0A192F;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #0A192F;
+}
+
+.card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Interatividade dos Cards (Efeito Hover) */
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #0A192F;
+    border-color: #0A192F;
+    color: white;
+    box-shadow: 0 10px 20px rgba(10, 25, 47, 0.2);
+}
+
+.card:hover h3, .card:hover .icone-card {
+    color: #E63946;
+}
+
+/* Seção de Depoimentos */
+.depoimentos-container {
+    padding: 80px 20px;
+    background-color: #f4f6f9;
+    text-align: center;
+}
+
+.depoimentos-container h2 {
+    font-size: 2rem;
+    color: #0A192F;
+    margin-bottom: 30px;
+}
+
+.depoimento-box {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #E63946;
+}
+
+.depoimento-box p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.depoimento-box h4 {
+    color: #0A192F;
+}
+
+/* Rodapé */
+footer {
+    background-color: #0A192F;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    border-top: 3px solid #E63946;
 }
 
 /* --- ESTILO DO MASCOTE E CHATBOT --- */
@@ -78,7 +208,6 @@ header nav a:hover {
     align-items: flex-end;
 }
 
-/* Balão de Fala */
 .balao-mascote {
     background-color: white;
     color: #333;
@@ -94,7 +223,6 @@ header nav a:hover {
     animation: flutuar 2s infinite ease-in-out;
 }
 
-/* Círculo do Mascote Corrigido */
 .mascote-btn {
     width: 85px;
     height: 85px;
@@ -103,7 +231,7 @@ header nav a:hover {
     cursor: pointer;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
     transition: transform 0.2s;
-    background-color: #FFF3E0; /* Fundo suave para combinar com o caramelo */
+    background-color: #FFF3E0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,13 +242,11 @@ header nav a:hover {
     transform: scale(1.08);
 }
 
-/* Ajuste do tamanho do cachorro dentro do círculo */
 .mascote-btn svg {
     width: 85%;
     height: 85%;
 }
 
-/* Janela do Chat */
 .chat-janela {
     display: none;
     width: 340px;
@@ -208,7 +334,6 @@ header nav a:hover {
     color: white;
 }
 
-/* Animação Flutuar */
 @keyframes flutuar {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
