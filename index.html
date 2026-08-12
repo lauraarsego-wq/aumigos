@@ -1,1 +1,65 @@
-<form action="https://formspree.io" method="POST">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumigoso - Seu Amigo Pet</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones FontAwesome para o Chat -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">🐾 Aumigoso</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h1>Bem-vindo ao Aumigoso!</h1>
+        <p>Tudo o que seu melhor amigo precisa em um só lugar.</p>
+        <button class="btn-principal">Saber Mais</button>
+    </section>
+
+    <!-- Conteúdo Espaço -->
+    <main class="conteudo">
+        <h2>Como podemos te ajudar hoje?</h2>
+        <p>Explore nosso site ou converse com o nosso mascote ali no canto!</p>
+    </main>
+
+    <!-- WIDGET DO MASCOTE E CHATBOT -->
+    <div class="chat-container">
+        <!-- Balão de Fala do Mascote -->
+        <div class="balao-mascote" id="balaoMascote">Au-au! Precisa de uma patazinha? 🐾</div>
+        
+        <!-- Botão do Mascote -->
+        <div class="mascote-btn" id="mascoteBtn" onclick="toggleChat()">
+            <img src="https://unsplash.com" alt="Mascote Cão">
+        </div>
+
+        <!-- Janela do Chatbot -->
+        <div class="chat-janela" id="chatJanela">
+            <div class="chat-header">
+                <h3>🐾 Chat do Aumigoso</h3>
+                <span class="fechar-chat" onclick="toggleChat()">&times;</span>
+            </div>
+            <div class="chat-mensagens" id="chatMensagens">
+                <div class="msg-bot">Olá! Eu sou o Bob, seu cão de ajuda. Como posso te ajudar hoje?</div>
+            </div>
+            <div class="chat-opcoes">
+                <button onclick="responder('servicos')">🐾 Ver Serviços</button>
+                <button onclick="responder('horario')">⏰ Horário de Funcionamento</button>
+                <button onclick="responder('humano')">📞 Falar com Humano</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
